@@ -1,0 +1,11 @@
+import pyowm
+owm = pyowm.OWM('05b31851d9b125b2e434df47defa5541')
+observation = owm.weather_at_place("Halmstad,sweden")
+w = observation.get_weather()
+temperature = w.get_temperature('celsius')
+tomorrow = pyowm.timeutils.tomorrow()
+wind = w.get_wind()
+print(w)
+print(wind)
+print(temperature)
+print(tomorrow)
